@@ -49,12 +49,120 @@ void pointerRelated()
     emptyLine();
 }
 
+// STRUCTS
+
+void showStruct()
+{
+    struct Adapter
+    {
+        int input_voltage;
+        int input_frequency;
+        float output_voltage;
+        float output_current;
+    };
+
+    struct Adapter laptop_adapter = {240, 50, 19.5, 3.33};
+
+    printf("Laptop adapter specifications input voltage => %d V\n", laptop_adapter.input_voltage);
+    printf("Laptop adapter specifications input frequency => %d Hz\n", laptop_adapter.input_frequency);
+    printf("Laptop adapter specifications output voltage => %.1f V\n", laptop_adapter.output_voltage);
+    printf("Laptop adapter specifications output current => %.2f A\n", laptop_adapter.output_current);
+    emptyLine();
+};
+
+// ENUM
+
+void showEnum()
+{
+
+    enum State
+    {
+        OFF,
+        ON,
+        ERROR
+    };
+
+    enum State laptop_state = ERROR;
+
+    if (laptop_state == OFF)
+    {
+        printf("Current laptop status is OFF corresponding value => %d\n", laptop_state);
+    }
+    else if (laptop_state == ON)
+    {
+        printf("Current laptop status is ON corresponding value => %d\n", laptop_state);
+    }
+    else if (laptop_state == ERROR)
+    {
+        printf("Current laptop status is ERROR corresponding value => %d\n", laptop_state);
+    }
+    emptyLine();
+};
+
+// TYPEDEF
+
+void showTypedef()
+{
+    typedef enum
+    {
+        OFF,
+        ON,
+        ERROR
+    } State;
+
+    typedef struct
+    {
+        int input_voltage;
+        int input_frequency;
+        float output_voltage;
+        float output_current;
+        State state;
+    } Adapter;
+
+    Adapter laptop_adapter = {240, 50, 19.5, 3.33, OFF};
+
+    printf("Laptop adapter specifications input voltage => %d V\n", laptop_adapter.input_voltage);
+    printf("Laptop adapter specifications input frequency => %d Hz\n", laptop_adapter.input_frequency);
+    printf("Laptop adapter specifications output voltage => %.1f V\n", laptop_adapter.output_voltage);
+    printf("Laptop adapter specifications output current => %.2f A\n", laptop_adapter.output_current);
+
+    if (laptop_adapter.state == OFF)
+    {
+        printf("Current laptop status is OFF corresponding value => %d\n", laptop_adapter.state);
+    }
+    else if (laptop_adapter.state == ON)
+    {
+        printf("Current laptop status is ON corresponding value => %d\n", laptop_adapter.state);
+    }
+    else if (laptop_adapter.state == ERROR)
+    {
+        printf("Current laptop status is ERROR corresponding value => %d\n", laptop_adapter.state);
+    }
+    emptyLine();
+}
+
+// MAIN
 int main()
 {
     // FUNCTION CALLS
     comment("Character Array");
     charArray();
+
+    // POINTER RELATED
     comment("Pointer Related");
     pointerRelated();
+
+    // STRUCTS
+    comment("STRUCTS RELATED");
+    showStruct();
+
+    // STRUCTS
+    comment("ENUM RELATED");
+    showEnum();
+
+    // TYPEDEF
+    comment("TYPEDEF RELATED");
+    showTypedef();
+
     return 0;
 }
