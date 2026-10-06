@@ -49,6 +49,18 @@ void pointerRelated()
     emptyLine();
 }
 
+void pointerExercise()
+{
+    int x = 540;
+    int *ptr = &x;
+
+    printf("%d\n", x);
+    printf("%d\n", *ptr);
+    printf("%p\n", ptr);
+    printf("%p\n", &x);
+    emptyLine();
+};
+
 // STRUCTS
 
 void showStruct()
@@ -151,6 +163,10 @@ int main()
     // POINTER RELATED
     comment("Pointer Related");
     pointerRelated();
+
+    // POINTER EXERCISE
+    comment("Pointer Exercise");
+    pointerExercise();
 
     // STRUCTS
     comment("STRUCTS RELATED");
